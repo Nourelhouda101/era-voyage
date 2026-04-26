@@ -43,7 +43,7 @@ function toggleAudio() {
 
 document.addEventListener("DOMContentLoaded", () => {
     const section3 = document.querySelector(".section-3");
-    const cards = document.querySelectorAll(".glass-card");
+    const cards = document.querySelectorAll(".card");
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
