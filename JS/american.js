@@ -20,6 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
+    
     // ===== MODAL DATA =====
     const modalData = {
         wisdom: {
