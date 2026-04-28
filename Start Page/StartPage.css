@@ -14,26 +14,113 @@ body, html {
     font-family: sans-serif; 
 }
 
+
+/* INTRO OVERLAY — ERA FLASH */
 #intro-overlay {
     position: fixed; top: 0; left: 0; width: 100%; height: 100%;
     background: #000; z-index: 1000; display: flex; justify-content: center; align-items: center;
+    flex-direction: column; overflow: hidden;
+}
+
+/* Era-coloured background layers — toggled by JS */
+.flash-bg {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+}
+.era-egypt  { background: radial-gradient(ellipse at 70% 50%, #1a0e00 0%, #0a0600 60%, #000 100%); }
+.era-greece { background: radial-gradient(ellipse at 30% 50%, #00121a 0%, #000a0d 60%, #000 100%); }
+.era-native { background: radial-gradient(ellipse at 60% 40%, #130400 0%, #0a0200 60%, #000 100%); }
+.era-gold   { background: radial-gradient(ellipse at 50% 50%, #1a1200 0%, #0d0900 60%, #000 100%); }
+
+/* Vignette on top of backgrounds */
+.intro-vignette {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at center, transparent 35%, rgba(0,0,0,0.88) 100%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Small civilisation label shown during slow flashes */
+.era-flash-label {
+    position: absolute;
+    bottom: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'Orbitron', sans-serif;
+    font-size: 13px;
+    letter-spacing: 6px;
+    color: rgba(197, 160, 89, 1);
+    opacity: 0;
+    z-index: 2;
+    white-space: nowrap;
+    text-transform: uppercase;
+    text-shadow: 0 0 40px rgba(197, 160, 89, 0.6);
+}
+
+.flash-year {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Cinzel', serif;
+    font-size: clamp(60px, 12vw, 140px);
+    color: rgba(197, 160, 89, 0.22);
+    font-weight: 700;
+    white-space: nowrap;
+    pointer-events: none;
+    user-select: none;
+    z-index: 2;
+    text-shadow: 0 0 80px rgba(197, 160, 89, 0.15);
+}
+
+/* Final logo container — hidden until flash ends */
+.intro-final-logo {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    display: flex;
     flex-direction: column;
+    align-items: center;
+    opacity: 0;
 }
 
 .intro-logo { 
-    font-family: 'Cinzel', serif; font-size: 60px; font-weight: 700; 
-    letter-spacing: 20px; color: #c5a059; text-transform: uppercase; 
-    opacity: 0; 
-    margin-bottom: 5px; 
-    transform: translateY(-40px); 
+    font-family: 'Cinzel', serif;
+    font-size: 60px;
+    font-weight: 700; 
+    letter-spacing: 20px;
+    color: #c5a059;
+    text-transform: uppercase; 
+    margin-bottom: 0px; 
 }
 
-.intro-subtext {
-    font-family: 'Orbitron', sans-serif; font-size: 12px; letter-spacing: 6px;
-    color: rgba(255,255,255,0.6); text-transform: uppercase; 
+/* 4-colour civilization stripe */
+.era-stripe {
+    display: flex;
+    width: 360px;
+    height: 2px;
+    margin: 4px auto 0;
+    gap: 4px;
     opacity: 0;
-    transform: translateY(10px); 
 }
+.era-stripe span { flex: 1; height: 100%; }
+.era-stripe span:nth-child(1) { background: #c8852a; } /* Egypt  */
+.era-stripe span:nth-child(2) { background: #3a8fa0; } /* Greece */
+.era-stripe span:nth-child(3) { background: #a04030; } /* Native */
+.era-stripe span:nth-child(4) { background: #c5a059; } /* Gold   */
+
+.intro-subtext {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 12px;
+    letter-spacing: 6px;
+    color: rgba(255,255,255,0.6);
+    text-transform: uppercase; 
+    margin-top: 12px;
+    opacity: 0;
+}
+
 
 #main-ui { visibility: hidden; opacity: 0; }
 
@@ -88,3 +175,28 @@ svg { width: 20px; stroke: white; fill: none; stroke-width: 2; }
     pointer-events: all; cursor: pointer;
 }
 .era-btn:hover { background: var(--accent); color: black; box-shadow: 0 0 30px var(--accent); }
+
+#sound-btn {
+    position: fixed;
+    bottom: 5%;
+    left: 3%;
+    width: 55px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.135);
+    backdrop-filter: blur(10px);
+    visibility: hidden;
+    opacity: 0;
+    transition: ease, transform 0.3s, border-color 0.3s, background 0.3s;
+    z-index: 1001;
+}
+#sound-btn:hover {
+    border-color: var(--accent);
+    transform: scale(1.1);
+    background: rgba(254, 254, 254, 0.258);
+}

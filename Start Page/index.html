@@ -3,19 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Era Voyage | Museum of Time</title>
-    <!-- Libraries -->
+    <title>Era Voyage</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Orbitron:wght@400&display=swap" rel="stylesheet">
-    
     <link rel="stylesheet" href="StartPage.css">
 </head>
 <body>
 
+    <div id="sound-btn" onclick="playClick(); toggleSound()">
+        <svg viewBox="0 0 24 24" style="width:18px;stroke:white;fill:none;stroke-width:2;">
+            <path d="M11 5L6 9H2v6h4l5 4V5z"/>
+            <path id="wave1" d="M15.54 8.46a5 5 0 0 1 0 7.07" style="display:none"/>
+            <path id="wave2" d="M19.07 4.93a10 10 0 0 1 0 14.14" style="display:none"/>
+        </svg>
+    </div>
+
+    <!-- INTRO OVERLAY -->
     <div id="intro-overlay">
-        <div class="intro-logo" id="i-logo">Era Voyage</div>
-        <div class="intro-subtext" id="i-subtext">Travel through the ages</div>
+        <div class="flash-bg era-egypt"  id="bg-egypt"></div>
+        <div class="flash-bg era-greece" id="bg-greece"></div>
+        <div class="flash-bg era-native" id="bg-native"></div>
+        <div class="flash-bg era-gold"   id="bg-gold"></div>
+
+        <div class="intro-vignette"></div>
+        <div class="era-flash-label" id="era-label"></div>
+        <div class="flash-year" id="flash-count"></div>
+
+        <div class="intro-final-logo" id="i-final-logo">
+            <div class="intro-logo" id="i-logo">Era Voyage</div>
+            <div class="era-stripe" id="eraStripe">
+                <span></span><span></span><span></span><span></span>
+            </div>
+            <div class="intro-subtext" id="i-subtext">Travel through the ages</div>
+        </div>
     </div>
 
     <div id="main-ui">
@@ -26,12 +47,12 @@
             <div class="era-label" id="label">THE DAWN OF CIVILIZATION</div>
             <h1 class="era-title" id="title">WHISPERS<br>OF THE SANDS</h1>
             <p class="description" id="desc">...</p>
-            <a href="egypt.html" id="era-link" class="era-btn">Uncover the Secrets</a>
+            <a href="egypt.html" id="era-link" class="era-btn" onclick="playClick()">Uncover the Secrets</a>
         </div>
 
         <div class="nav-controls">
-            <div class="nav-arrow" onclick="updateEra(-1)"><svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg></div>
-            <div class="nav-arrow" onclick="updateEra(1)"><svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg></div>
+            <div class="nav-arrow" onclick="playClick(); updateEra(-1)"><svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg></div>
+            <div class="nav-arrow" onclick="playClick(); updateEra(1)"><svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg></div>
         </div>
 
         <div class="pagination">
