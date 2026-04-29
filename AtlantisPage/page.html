@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atlantis</title>
+
+    <link rel="stylesheet" href="../AtlantisPage/theme.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- HERO SECTION -->
+
+    <section class="hero">
+
+        <button class="back-btn" onclick="window.history.back()">
+            Back
+        </button>
+
+        <div class="hero-text">
+
+            <h1 class="main-title">ATLANTIS</h1>
+
+            <h2 class="hero-subtitle">A Lost Legend</h2>
+
+            <p class="hero-description">
+                Discover the mysterious civilization hidden beneath the waves and explore
+                the secrets of the lost underwater kingdom.
+            </p>
+
+            <button class="explore-btn">
+                Explore Atlantis
+            </button>
+
+        </div>
+
+        <div class="hero-image">
+            <img src="../Images/poseidon.png" alt="Poseidon">
+        </div>
+
+    </section>
+
+    <!-- INTRO SECTION -->
+
+    <section class="intro-section">
+
+        <div class="brief">
+
+            <h2 class="brief-title">
+                The Lost Civilization
+            </h2>
+
+            <p>
+                Atlantis is a legendary lost civilization described by Plato.
+                It was believed to be a powerful island kingdom filled with
+                advanced architecture, mysterious knowledge, and immense power
+                before disappearing beneath the sea forever.
+            </p>
+
+            <div class="audio-box">
+
+                <span class="ai-reader" onclick="toggleAudio(this)">
+                    🕪
+                </span>
+
+                <audio id="brief-audio" src="../AtlantisPage/Media(Atlantis)/AIReader.mp3"></audio>
+
+            </div>
+
+        </div>
+
+        <div class="intro-image">
+            <img src="../Images/atlantis-city.png" alt="Atlantis City">
+        </div>
+
+    </section>
+
+    <!-- FEATURES SECTION -->
+
+    <section class="features-section">
+
+        <h2 class="section-title">
+            Explore Atlantis
+        </h2>
+
+        <div class="cards-container">
+
+            <div class="card" onclick="showPopup('popup1')">
+
+                <img src="../Images/temple.jpg" alt="Temple">
+
+                <div class="card-content">
+
+                    <h3 class="card-title">
+                        Atlantis Temple
+                    </h3>
+
+                    <p>
+                        Ancient ruins hidden beneath the sea filled with
+                        forgotten history and mysteries.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="card" onclick="showPopup('popup2')">
+
+                <img src="../Images/crystal.jpg" alt="Crystal Garden">
+
+                <div class="card-content">
+
+                    <h3 class="card-title">
+                        Crystal Garden
+                    </h3>
+
+                    <p>
+                        Magical glowing crystals and underwater plants
+                        illuminating the lost kingdom.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="card" onclick="showPopup('popup3')">
+
+                <img src="../Images/ocean-ruins.jpg" alt="Ocean Ruins">
+
+                <div class="card-content">
+
+                    <h3 class="card-title">
+                        Ocean Ruins
+                    </h3>
+
+                    <p>
+                        Mysterious underwater structures buried deep
+                        within the ocean.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="card" onclick="showPopup('popup4')">
+
+                <img src="../Images/lost-city.jpg" alt="Lost City Core">
+
+                <div class="card-content">
+
+                    <h3 class="card-title">
+                        Lost City Core
+                    </h3>
+
+                    <p>
+                        The powerful heart of Atlantis civilization
+                        and its hidden energy.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- MORE CIVILIZATIONS -->
+
+    <section class="more-civilizations">
+
+        <h2 class="more-title">
+            Explore More Civilizations
+        </h2>
+
+        <div class="more-cards">
+
+            <!-- CARD 1 -->
+
+            <div class="more-card">
+
+                <img src="../AtlantisPage/Media(Atlantis)/lastSection.png"
+                    alt="Egypt Civilization"
+                    class="card-img-top">
+
+                <div class="more-card-content">
+
+                    <h3>
+                        Egyptian Civilization
+                    </h3>
+
+                    <p>
+                        Discover the world of the ancient Pharaohs
+                        and pyramids.
+                    </p>
+
+                    <a href="../HTML/egypt.html">
+
+                        <button>
+                            Explore
+                        </button>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+            <!-- CARD 2 -->
+
+            <div class="more-card">
+
+                <img src="../AtlantisPage/Media(Atlantis)/lastSection(home).png"
+                    alt="Home"
+                    class="card-img-top">
+
+                <div class="more-card-content">
+
+                    <h3>
+                        Home
+                    </h3>
+
+                    <p>
+                        Return to the main page and continue exploring.
+                    </p>
+
+                    <a href="../HTML/index.html">
+
+                        <button>
+                            Go Home
+                        </button>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+            <!-- CARD 3 -->
+
+            <div class="more-card">
+
+                <img src="../AtlantisPage/Media(Atlantis)/lastSection(native americans).png"
+                    alt="Native Americans"
+                    class="card-img-top">
+
+                <div class="more-card-content">
+
+                    <h3>
+                        Native Americans
+                    </h3>
+
+                    <p>
+                        Learn about ancient tribes, culture,
+                        and traditions.
+                    </p>
+
+                    <a href="../HTML/native.html">
+
+                        <button>
+                            Explore
+                        </button>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- GALLERY SECTION -->
+
+   <div class="last-section-bg">
+
+    <!-- GALLERY SECTION -->
+
+    <section class="gallery-section">
+
+        <h2 class="gallery-title">
+            The Beauty of Atlantis
+        </h2>
+
+        <div class="gallery-images">
+
+            <img src="../Images/gallery1.jpg" alt="">
+            <img src="../Images/gallery2.jpg" alt="">
+            <img src="../Images/gallery3.jpg" alt="">
+            <img src="../Images/gallery4.jpg" alt="">
+
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+
+    <footer class="footer">
+
+        <h2 class="footer-title">
+            ATLANTIS
+        </h2>
+
+        <p>
+            Dive into the mysteries of Atlantis and explore
+            ancient civilizations.
+        </p>
+
+    </footer>
+
+</div>
+
+    <!-- POPUPS -->
+
+    <div id="popup1" class="popup">
+        <div class="popup-content">
+
+            <span class="close"
+                onclick="closePopup('popup1')">
+                &times;
+            </span>
+
+            <p>
+                Atlantis Temple details...
+            </p>
+
+        </div>
+    </div>
+
+    <script src="../AtlantisPage/script.js"></script>
+
+</body>
+
+</html>
