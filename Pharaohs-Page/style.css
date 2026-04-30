@@ -34,7 +34,19 @@ body {
 }     
 .section-2 { background-position: center 33.33%; }  /* Section-2 */
 .section-3 { background-position: center 66.66%; }  /* Section-3 */
-.section-4 { background-position: center 100%; }    /* Section-4 */
+.section-4 { background-position: center 100%; position: relative;}  /* Section-4 */
+.section-4::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.568);
+    z-index: 0;
+    pointer-events: none;
+}
+.section-4 .all-cards,
+.section-4 .footer {
+    z-index: 1;
+}
 
 /* All Sections contesnt */
 .content {
@@ -304,11 +316,72 @@ p {
 /* ---------------------------------------------------------------*/
 
 /* ------------------------- Section-4 -------------------------- */
+.curved-text-svg {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -0.5%;
+    display: block;
+    width: 70%;
+    height: auto;
+    pointer-events: none;
+    overflow: visible; 
+    margin: 0 auto;
+    z-index: 100;
+}
+/* Style for the text */
+.text-style {
+    fill: #f7c14e;
+    font-family: 'Marcellus', serif;
+    font-size: clamp(16px, 2.5vw, 26px);
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.4vw;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+    dominant-baseline: middle;
+    filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.8)) drop-shadow(0 0 8px rgba(212, 175, 55, 0.4));
+    
+    pointer-events: all; 
+    cursor: pointer; 
+    transition: all 0.3s ease;
+    stroke: transparent;
+    stroke-width: 10px;
+}
+.text-style:hover{
+    cursor: text;
+    filter: brightness(1.2) drop-shadow(0 0 15px #f7c14e);
+}
+/* --- Media Queries --- */
+/* For large screens (> 1024px) */
+@media (min-width: 1025px) {
+    .curved-text-svg.small-screen {
+        display: none;
+    }
+    .curved-text-svg.large-screen {
+        display: block;
+        width: 60%;
+    }
+}
+@media (max-width: 1024px) {
+    .curved-text-svg.large-screen {
+        display: none;
+    }
+    .curved-text-svg.small-screen {
+        display: block;
+        width: 70%;
+        top: 8%;
+    }
+    .text-style {
+        font-size: 18px; 
+    }
+}
+
 .all-cards {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    width: 100%;
 }
 
 .all-cards a:not(.center-card) {
@@ -318,6 +391,7 @@ p {
     position: absolute;
     display: block;
     transition: transform 0.3s ease;
+    bottom: 17%;
 }
 .all-cards .center-card{
     position: absolute;
@@ -374,6 +448,21 @@ p {
 }
 .all-cards .center-card img:hover {
     filter: brightness(0.5);
+}
+
+@media (max-width: 1024px) {
+    .all-cards a:not(.center-card) {
+        width: 22%;
+        height: 45%;
+    }
+    
+    .all-cards .left-card { left: 8%; }
+    .all-cards .right-card { right: 8%; }
+
+    .all-cards .center-card {
+        width: 25%;
+        top: 40%; 
+    }
 }
 
 .section-4 .footer{
