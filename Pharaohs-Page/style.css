@@ -28,13 +28,20 @@ body {
 }
 /* Every section alone */
  /* Section-1 */
-.section-1 { background-position: center 0%;
+.section-1 { 
+    background-position: center 0%;
     background-image: url('media/b1.png');
     background-size: cover;
-}     
-.section-2 { background-position: center 33.33%; }  /* Section-2 */
+}
+/* Section-2 */
+.section-2 { 
+    background-position: center 33.33%;
+    background-image: url('media/sec2.png');
+    background-size: cover;
+}
 .section-3 { background-position: center 66.66%; }  /* Section-3 */
 .section-4 { background-position: center 100%; position: relative;}  /* Section-4 */
+.section-2::before,
 .section-4::before {
     content: "";
     position: absolute;
@@ -43,8 +50,10 @@ body {
     z-index: 0;
     pointer-events: none;
 }
+
+.section-2 .content,
 .section-4 .all-cards,
-.section-4 .footer {
+.section-4 .footer{
     z-index: 1;
 }
 
@@ -83,7 +92,7 @@ p {
     /* background: rgba(0, 0, 0, 0.7);; */
     /* border: 2px solid #d4af37; */
     /* border-radius: 15px; */
-    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.932);
+    text-shadow: 0 2px 6px rgb(17, 16, 16);
     z-index: 2;
     /* box-shadow: 0 0 30px rgba(212, 175, 55, 0.4) */
 }
@@ -141,8 +150,9 @@ p {
     height: 300px;
     background: rgba(0, 0, 0, 0.6);
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(212, 175, 55, 0.3);
+    border: 1px solid rgba(226, 186, 56, 0.3);
     border-radius: 8px;
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.4);
     padding: 15px;
     text-align: center;
     transition: all 0.4s ease;
