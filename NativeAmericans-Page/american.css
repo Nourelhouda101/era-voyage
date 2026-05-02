@@ -10,6 +10,7 @@
     --font-body: 'Crimson Text', serif;
 }
 
+/* ===== RESET & BASE ===== */
 *,
 *::before,
 *::after {
@@ -39,6 +40,7 @@ body {
     pointer-events: none;
 }
 
+/* ===== SECTIONS LAYOUT ===== */
 section {
     position: relative;
     z-index: 2;
@@ -49,6 +51,7 @@ section {
     padding: 60px 20px;
 }
 
+/* ===== PART 1: HERO ===== */
 .hero-section {
     display: flex;
     flex-direction: column;
@@ -84,6 +87,7 @@ section {
     text-transform: uppercase;
 }
 
+/* ===== PART 2: COUNCIL ===== */
 .council-section {
     margin-top: -25vh;
     display: flex;
@@ -127,6 +131,7 @@ section {
     max-width: 1200px;
 }
 
+/* ===== CARDS — GLASS PANEL STYLE ===== */
 .card {
     cursor: pointer;
     padding: 40px 28px 36px;
@@ -193,6 +198,7 @@ section {
     transform: translateX(4px);
 }
 
+/* ===== PART 3: PORTAL SECTION ===== */
 .guide-section {
     justify-content: center;
     align-items: stretch;
@@ -365,6 +371,7 @@ section {
     margin-bottom: 0;
 }
 
+/* ===== BACK BUTTON ===== */
 .back-btn {
     position: absolute;
     top: 30px;
@@ -384,6 +391,7 @@ section {
     color: #000;
 }
 
+/* ===== ANIMATIONS ===== */
 @keyframes float {
 
     0%,
@@ -408,6 +416,7 @@ section {
     }
 }
 
+/* ===== RESPONSIVE ===== */
 @media (max-width: 900px) {
     .main-title {
         font-size: 3.5rem;

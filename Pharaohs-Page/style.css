@@ -11,6 +11,7 @@ body {
     overflow-x: hidden;
 }
 
+/* All sections dimensions */
 .page-section {
     height: 100vh;
     display: flex;
@@ -25,19 +26,21 @@ body {
     transition: background-position 0.3s ease-out;
     overflow: hidden;
 }
-
+/* Every section alone */
+ /* Section-1 */
 .section-1 { 
     background-position: center 0%;
     background-image: url('media/b1.png');
     background-size: cover;
 }
+/* Section-2 */
 .section-2 { 
     background-position: center 33.33%;
     background-image: url('media/sec2.png');
     background-size: cover;
 }
-.section-3 { background-position: center 66.66%; }
-.section-4 { background-position: center 100%; position: relative;}
+.section-3 { background-position: center 66.66%; }  /* Section-3 */
+.section-4 { background-position: center 100%; position: relative;}  /* Section-4 */
 .section-2::before,
 .section-4::before {
     content: "";
@@ -67,6 +70,7 @@ body {
     z-index: 1;
 }
 
+/* All Sections contesnt */
 .content {
     position: relative;
     background: rgba(0, 0, 0, 0.7);
@@ -88,6 +92,7 @@ p {
     line-height: 1.6;
 }
 
+/* Section-1 */
 .section-1 h1{ 
     position: absolute;
     color: rgb(231, 198, 107)(212, 175, 55, 0.4);
@@ -105,6 +110,7 @@ p {
     /* box-shadow: 0 0 30px rgba(212, 175, 55, 0.4) */
 }
 
+/* Section-2 */
 .section-2 h2 {
     font-size: xx-large;
     margin-bottom: 25px;
@@ -140,6 +146,7 @@ p {
     background: rgba(243, 201, 107, 0.6);
 }
 
+/* ----------------------------------- Section-3 --------------------------*/
 .cards-container {
     position: relative;
     width: 100%;
@@ -252,11 +259,13 @@ p {
             drop-shadow(0 0 8px rgba(212, 175, 55, 0.4));
     background-clip: text;
 }
+/* For 4 cards and the caption */
 .card.active {
     opacity: 1;
     pointer-events: auto;
 }
 
+/* After click on any card */
 .popup {
     display: none;
     position: fixed;
@@ -327,7 +336,9 @@ p {
     font-weight: bolder;
     color: #C9A24A; 
 }
+/* ---------------------------------------------------------------*/
 
+/* ------------------------- Section-4 -------------------------- */
 .curved-text-svg {
     position: absolute;
     left: 50%;
@@ -341,6 +352,7 @@ p {
     margin: 0 auto;
     z-index: 100;
 }
+/* Style for the text */
 .text-style {
     fill: #f7c14e;
     font-family: 'Marcellus', serif;
@@ -362,7 +374,7 @@ p {
     cursor: text;
     filter: brightness(1.2) drop-shadow(0 0 15px #f7c14e);
 }
-
+/* --- Media Queries --- */
 /* For large screens (> 1024px) */
 @media (min-width: 1025px) {
     .curved-text-svg.small-screen {
@@ -486,6 +498,7 @@ p {
     text-shadow: 0 2px 6px rgba(0, 0, 0, 0.986);
 }
 
+/* ----------Back-Button--------- */
 .back-btn {
     position: absolute;
     top: 30px;
