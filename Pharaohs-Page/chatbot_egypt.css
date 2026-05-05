@@ -6,8 +6,8 @@ body {
 
 
 #chatbot-icon {
-  width: 110px;
-  height: 110px;
+  width: 125px;
+  height: 125px;
   position: fixed;
   bottom: 22px;
   right: 12px;
@@ -20,7 +20,7 @@ body {
   overflow: hidden;
   transition: all 0.3s ease;
   animation: float 2s infinite ease-in-out;
-  z-index: 1;
+  z-index: 100000;
 }
 
 #chatbot-icon.hide {
@@ -36,7 +36,7 @@ body {
   filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.8));
 }
 
-
+/* #C2A070 */
 #chatbot-container {
   position: fixed;
   bottom: 40px;
@@ -45,7 +45,7 @@ body {
   height: 460px;
   border-radius: 18px;
   box-shadow: 0 10px 40px rgba(0,0,0,0.6);
-  background: url("../Chat-Bot/media/background.png") center/cover no-repeat;
+  background: url("../Chat-Bot/media/back_egypt2.png") center/cover no-repeat;
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -54,6 +54,7 @@ body {
   transform-origin: bottom right;
   pointer-events: none;
   transition: all 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  z-index: 100000;
 }
 
 #chatbot-container.active {
@@ -64,7 +65,7 @@ body {
 
 
 #chatbot-header {
-  background: linear-gradient(90deg, #0b2942, #263d55);
+  background: linear-gradient(90deg, #3e2e14, #5f4e14);
   color: white;
   padding: 10px 12px;
   font-size: 17px;
@@ -101,7 +102,7 @@ body {
 #chat-bg {
   position: absolute;
   inset: 0;
-  background: url("../Chat-Bot/media/background.png") center/cover cover no-repeat;
+  background: url("../Chat-Bot/media/back_egypt2.png") center/cover cover no-repeat;
   pointer-events: none;
 }
 
@@ -123,13 +124,13 @@ body {
 }
 
 .message.user {
-  background-color: #012943;
+  background-color: #856d20;
   color: white;
   align-self: flex-end;
 }
 
 .message.bot {
-  background-color: #0a1d32;
+  background-color: #4e381a;
   color: white;
   align-self: flex-start;
 }
@@ -138,8 +139,8 @@ body {
   display: flex;
   padding: 8px 10px;
   gap: 8px;
-  border-top: 1px solid #1a2f42;
-  background: linear-gradient(90deg, #1a2f42, #1f3145);
+  border-top: 1px solid #6f5023;
+  background: linear-gradient(90deg, #3e2e14, #5f4e14);
   background-color: #1a2f42;
   align-items: center;
   box-sizing: border-box;
@@ -151,7 +152,7 @@ body {
   padding: 10px 15px;
   font-size: 15px;
   border-radius: 20px;
-  background-color: #041323;
+  background-color: #302504;
   border: none;
   color: white;
   resize: none;
@@ -163,7 +164,7 @@ body {
 
 #chatbot-input:focus {
   outline: none;
-  box-shadow: 0 0 8px #608196;
+  box-shadow: 0 0 8px #968b60;
 }
 
 #send-btn {
@@ -242,7 +243,7 @@ body {
 #chatbot-input:-webkit-autofill:hover, 
 #chatbot-input:-webkit-autofill:focus {
   -webkit-text-fill-color: white !important;
-  -webkit-box-shadow: 0 0 0px 1000px #041323 inset !important;
+  -webkit-box-shadow: 0 0 0px 1000px #1a1402 inset !important;
   font-family: "Poppins", sans-serif !important;
   transition: background-color 5000s ease-in-out 0s;
 }
