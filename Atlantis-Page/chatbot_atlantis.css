@@ -174,14 +174,13 @@ body {
   background: transparent;
   border: none;
   cursor: pointer;
+  transition: 0.3s;
 }
 
 #send-btn img {
-
   width: 30px;
   height: 30px;
   object-fit: contain;
-  opacity: 0.8;
   transition: opacity 0.2s;
 }
 
@@ -191,8 +190,12 @@ body {
 
 #send-btn:disabled {
   cursor: not-allowed;
+  opacity: 0.4;
   filter: grayscale(1);
-  opacity: 0.4; 
+}
+
+#send-btn:not(:disabled):hover img {
+  opacity: 1;
 }
 
 .typing {
