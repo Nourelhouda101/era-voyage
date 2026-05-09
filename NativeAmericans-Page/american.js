@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    
+
     // ===== MODAL DATA =====
     const modalData = {
         wisdom: {
@@ -67,7 +67,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // ===== MODAL LOGIC =====
     const overlay = document.getElementById('modal-overlay');
-    const closeBtn = document.getElementById('modal-close');
     const modalIcon = document.getElementById('modal-icon');
     const modalTitle = document.getElementById('modal-title');
     const modalBody = document.getElementById('modal-body');
@@ -90,8 +89,10 @@ document.addEventListener("DOMContentLoaded", () => {
         document.body.style.overflow = '';
     }
 
-    closeBtn.addEventListener('click', closeModal);
+    // Close on overlay background click
     overlay.addEventListener('click', e => { if (e.target === overlay) closeModal(); });
+
+    // Close on ESC key
     document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
 
     // ===== SCROLL REVEAL =====
@@ -111,4 +112,4 @@ document.addEventListener("DOMContentLoaded", () => {
         observer.observe(el);
     });
 
-}); // نهاية DOMContentLoaded
+});
