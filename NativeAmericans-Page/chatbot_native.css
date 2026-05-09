@@ -45,7 +45,7 @@ body {
   height: 460px;
   border-radius: 18px;
   box-shadow: 0 10px 40px rgba(0,0,0,0.6);
-  background: url("../Chat-Bot/media/background.png") center/cover no-repeat;
+  background: url("../Chat-Bot/media/native_back.png") center/cover no-repeat;
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -102,7 +102,7 @@ body {
 #chat-bg {
   position: absolute;
   inset: 0;
-  background: url("../Chat-Bot/media/background.png") center/cover cover no-repeat;
+  background: url("../Chat-Bot/media/native_back.png") center/cover cover no-repeat;
   pointer-events: none;
 }
 
