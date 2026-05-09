@@ -41,8 +41,8 @@
             <h2 class="brief-title">
                 The Lost Civilization
             </h2>
-            <span class="ai-reader" onclick="toggleAudio(this)">
-                🕪
+            <span class="ai-reader" onclick="toggleAudio(this)" style="cursor: pointer;">
+                🔊
             </span>
             <div class="audio-box">
                 <audio id="brief-audio" src="Media/AIReader.mp3"></audio>
@@ -59,67 +59,65 @@
     </section>
 
 
-    <section class="features-section">
+   <section class="features-section">
+    <h2 class="section-title">Explore Atlantis</h2>
+    
+    <div class="cards-container">
 
-        <h2 class="section-title">
-            Explore Atlantis
-        </h2>
-        <div class="cards-container">
-
-            <div class="card" onclick="showPopup('popup1')">
-                <img src="Media/temple.jpeg" alt="Temple">
-                <div class="card-content">
-                    <h3 class="card-title">
-                        Atlantis Temple
-                    </h3>
-                    <p>
-                        Ancient ruins hidden beneath the sea filled with
-                        forgotten history and mysteries.
-                    </p>
-                </div>
+        <!-- Card 1: Atlantis Temple -->
+        <div class="card">
+            <img src="Media/temple.jpeg" alt="Temple">
+            <div class="card-content">
+                <h3 class="card-title">Atlantis Temple</h3>
+                <p>Ancient ruins hidden beneath the sea filled with forgotten history and mysteries.</p>
+                <button class="more-btn" onclick="showPopup('popup1')">
+                    <span>More</span>
+                    <div class="arrow-circle">➜</div>
+                </button>
             </div>
-
-            <div class="card" onclick="showPopup('popup2')">
-                <img src="Media/crystal.jpeg" alt="Crystal Garden">
-                <div class="card-content">
-                    <h3 class="card-title">
-                        Crystal Garden
-                    </h3>
-                    <p>
-                        Magical glowing crystals and underwater plants
-                        illuminating the lost kingdom.
-                    </p>
-                </div>
-            </div>
-
-            <div class="card" onclick="showPopup('popup3')">
-                <img src="Media/ocean-ruins.jpeg" alt="Ocean Ruins">
-                <div class="card-content">
-                    <h3 class="card-title">
-                        Ocean Ruins
-                    </h3>
-                    <p>
-                        Mysterious underwater structures buried deep
-                        within the ocean.
-                    </p>
-                </div>
-            </div>
-
-            <div class="card" onclick="showPopup('popup4')">
-                <img src="Media/lost-city.jpeg" alt="Lost City Core">
-                <div class="card-content">
-                    <h3 class="card-title">
-                        Lost City Core
-                    </h3>
-                    <p>
-                        The powerful heart of Atlantis civilization
-                        and its hidden energy.
-                    </p>
-                </div>
-            </div>
-
         </div>
-    </section>
+
+        <!-- Card 2: Crystal Garden -->
+        <div class="card">
+            <img src="Media/crystal.jpeg" alt="Crystal Garden">
+            <div class="card-content">
+                <h3 class="card-title">Crystal Garden</h3>
+                <p>Magical glowing crystals and underwater plants illuminating the lost kingdom.</p>
+                <button class="more-btn" onclick="showPopup('popup2')">
+                    <span>More</span>
+                    <div class="arrow-circle">➜</div>
+                </button>
+            </div>
+        </div>
+
+        <!-- Card 3: Ocean Ruins -->
+        <div class="card">
+            <img src="Media/ocean-ruins.jpeg" alt="Ocean Ruins">
+            <div class="card-content">
+                <h3 class="card-title">Ocean Ruins</h3>
+                <p>Mysterious underwater structures buried deep within the ocean.</p>
+                <button class="more-btn" onclick="showPopup('popup3')">
+                    <span>More</span>
+                    <div class="arrow-circle">➜</div>
+                </button>
+            </div>
+        </div>
+
+        <!-- Card 4: Lost City Core -->
+        <div class="card">
+            <img src="Media/lost-city.jpeg" alt="Lost City Core">
+            <div class="card-content">
+                <h3 class="card-title">Lost City Core</h3>
+                <p>The powerful heart of Atlantis civilization and its hidden energy.</p>
+                <button class="more-btn" onclick="showPopup('popup4')">
+                    <span>More</span>
+                    <div class="arrow-circle">➜</div>
+                </button>
+            </div>
+        </div>
+
+    </div>
+</section>
 
 
     <section class="more-civilizations">
@@ -185,18 +183,52 @@
 
     </section>
 
-    <div class="last-section-bg">
-        <footer class="footer">
-            <h2 class="footer-title">
-                ATLANTIS
-            </h2>
-            <p>
-                Dive into the mysteries of Atlantis and explore
-                ancient civilizations.
-            </p>
-        </footer>
+  <div class="last-section-bg">
+    <footer class="footer">
+   
+        <div class="footer-container">
+            
+         
+            <div class="footer-column">
+                <h3>Navigation</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Atlantis</a></li>
+                    <li><a href="#">Civilizations</a></li>
+                </ul>
+            </div>
 
-    </div>
+        
+            <div class="footer-main">
+                <img src="Media/trident.png" alt="Trident" class="footer-icon">
+                <h2 class="footer-title">ATLANTIS</h2>
+                <p>Dive into the mysteries of Atlantis and explore ancient civilizations.</p>
+                <div class="footer-socials">
+                    <span style="cursor: pointer;">ⓕ</span>
+                    <span style="cursor: pointer;">𝕏</span>
+                    <span style="cursor: pointer;">🅾</span>
+                </div>
+            </div>
+
+        
+            <div class="footer-column">
+                <h3>More</h3>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Use</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">About Us</a></li>
+                </ul>
+            </div>
+            
+        </div>
+
+      
+        <div class="footer-bottom">
+            <p>© 2026 Atlantis. All rights reserved.</p>
+        </div>
+    </footer>
+</div>
 
     <div class="popup" id="popup">
         <div class="popup-content">

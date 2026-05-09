@@ -5,17 +5,44 @@ document.querySelector(".explore-btn").addEventListener("click", () => {
     });
 });
 
-document.querySelectorAll(".card").forEach((card, i) => {
-    card.addEventListener("click", () => {
-        document.getElementById(`popup${i+1}`).style.display = "flex";
+// البحث عن كل أزرار More بدلاً من الكروت كاملة
+document.querySelectorAll(".more-btn").forEach(button => {
+    button.addEventListener("click", (e) => {
+        // منع أي أحداث تانية ممكن تحصل (اختياري)
+        e.stopPropagation();
+
+        // 1. الوصول لعنوان الكارد اللي الزرار ده جواه
+        // بنستخدم closest عشان نطلع لأقرب أب اسمه card ومنه نجيب الـ card-title
+        const card = button.closest(".card");
+        const title = card.querySelector(".card-title").textContent.trim();
+
+        // 2. سحب البيانات من الـ Object (popupData)
+        const data = popupData[title];
+
+        // 3. التأكد إن البيانات موجودة قبل ما نملا الـ Popup
+        if (data) {
+            document.getElementById("popup-title").textContent = data.title;
+            document.getElementById("popup-img").src = data.img;
+
+            document.getElementById("popup-text").innerHTML = `
+                <p><strong>${data.description}</strong></p>
+                <p>${data.details}</p>
+                <ul style="list-style-type: disc; padding-left: 20px; margin-top: 10px;">
+                    ${data.facts.map(f => `<li>${f}</li>`).join("")}
+                </ul>
+            `;
+
+            // 4. إظهار الـ Popup
+            document.getElementById("popup").style.display = "flex";
+        }
     });
 });
 
-document.querySelectorAll(".close").forEach(btn => {
-    btn.onclick = () => {
-        btn.closest(".popup").style.display = "none";
-    };
-});
+// دالة الإغلاق (كما هي)
+function closePopup() {
+    document.getElementById("popup").style.display = "none";
+}
+
 
 function toggleAudio(icon) {
     const audio = document.getElementById("brief-audio");
