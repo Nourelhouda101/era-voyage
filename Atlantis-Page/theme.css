@@ -429,7 +429,7 @@ section {
 }
 
 
-.footer-socials {
+/* .footer-socials {
     display: flex;            
     justify-content: center;   
     gap: 20px;                
@@ -444,7 +444,7 @@ section {
 
 .footer-socials span:hover {
     color: #d4af37;           
-}
+} */
 
 .footer-icon {
     width: 200px;        
