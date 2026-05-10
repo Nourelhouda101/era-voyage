@@ -4,7 +4,7 @@ const eraData = [
         title: "WHISPERS<br>OF THE SANDS", 
         desc: "Thousands of years ago, the sands of Egypt hid secrets of magic, math, and the afterlife. Step into the shadows of the Great Temples to uncover the stories of the people who dreamt of eternity and achieved it.",
         btnText: "Uncover the Secrets",
-        url: "../Pharaohs-Page/pharaohs.html",
+        url: "..Pharaohs-Page/pharaohs.html",
         img: "media/egypt.png", 
         accent: "#c5a059",
         bg: "radial-gradient(circle at 75% 50%, rgba(197, 160, 89, 0.2) 0%, #050505 70%)",
@@ -34,23 +34,6 @@ const eraData = [
     }
 ];
 
-const bgAudio = new Audio('media/BG_Music.mp3');
-bgAudio.loop = true;
-bgAudio.volume = 0.5;
-let soundOn = false;
-
-function toggleSound() {
-    soundOn = !soundOn;
-    if (soundOn) {
-        bgAudio.play();
-        document.getElementById('wave1').style.display = 'block';
-        document.getElementById('wave2').style.display = 'block';
-    } else {
-        bgAudio.pause();
-        document.getElementById('wave1').style.display = 'none';
-        document.getElementById('wave2').style.display = 'none';
-    }
-}
 
 const clickSound = new Audio('media/Click.mp3');
 clickSound.volume = 0.6;
@@ -122,6 +105,10 @@ function updateEra(dir) {
 }
 
 document.getElementById('desc').innerHTML = eraData[0].desc;
+document.getElementById('era-link').addEventListener('click', () => {
+    sessionStorage.setItem('musicPlaying', soundOn);
+    sessionStorage.setItem('musicTime', bgAudio.currentTime);
+});
 
 function animate() {
     requestAnimationFrame(animate);
@@ -130,8 +117,14 @@ function animate() {
 }
 animate();
 
-// INTRO — ERA FLASH SEQUENCE
-window.addEventListener('load', () => {
+// INTRO — VOYAGE GATE + ERA FLASH SEQUENCE
+function startVoyage() {
+    sessionStorage.setItem('visited', 'true');
+    const introSFX = new Audio('media/intro_sfx.mp3');
+    introSFX.volume = 0.8;
+    introSFX.play();
+
+    document.getElementById('voyage-gate').style.display = 'none';
 
     const ALL_BGS   = ['bg-egypt', 'bg-greece', 'bg-native', 'bg-gold'];
     const lbl       = document.getElementById('era-label');
@@ -149,20 +142,16 @@ window.addEventListener('load', () => {
         { bg: 'bg-egypt',  label: 'THE DAWN OF CIVILIZATION', year: '3100 BC', accent: eraData[0].accent, dur: 800 },
         { bg: 'bg-greece', label: 'THE SUNKEN METROPOLIS',     year: '800 BC',  accent: eraData[1].accent, dur: 800 },
         { bg: 'bg-native', label: 'THE ANCESTRAL SPIRIT',      year: '1200 AD', accent: eraData[2].accent, dur: 800 },
-        // strobe pass 1
         { bg: 'bg-egypt',  label: '', year: '', accent: eraData[0].accent, dur: 200 },
         { bg: 'bg-greece', label: '', year: '', accent: eraData[1].accent, dur: 200 },
         { bg: 'bg-native', label: '', year: '', accent: eraData[2].accent, dur: 200 },
-        // strobe pass 2 — faster
         { bg: 'bg-egypt',  label: '', year: '', accent: eraData[0].accent, dur: 110 },
         { bg: 'bg-greece', label: '', year: '', accent: eraData[1].accent, dur: 110 },
         { bg: 'bg-native', label: '', year: '', accent: eraData[2].accent, dur: 110 },
-        // strobe pass 3 — fastest
         { bg: 'bg-egypt',  label: '', year: '', accent: eraData[0].accent, dur: 60  },
         { bg: 'bg-greece', label: '', year: '', accent: eraData[1].accent, dur: 60  },
         { bg: 'bg-native', label: '', year: '', accent: eraData[2].accent, dur: 60  },
         { bg: 'bg-egypt',  label: '', year: '', accent: eraData[0].accent, dur: 60  },
-        // settle on gold
         { bg: 'bg-gold',   label: '', year: '', accent: eraData[0].accent, dur: 900 },
     ];
 
@@ -178,14 +167,9 @@ window.addEventListener('load', () => {
             gsap.to(stripe,    { opacity: 1, duration: 0.8, delay: 0.6, ease: "power2.out" });
             gsap.to(subtext,   { opacity: 0.8, duration: 0.8, delay: 0.9, ease: "power2.out" });
 
-            // Hold on logo then slide overlay up and reveal main UI
             setTimeout(() => {
                 gsap.timeline()
-                    .to("#intro-overlay", {
-                        y: "-100%",
-                        duration: 2,
-                        ease: "expo.inOut"
-                    })
+                    .to("#intro-overlay", { y: "-100%", duration: 2, ease: "expo.inOut" })
                     .set("#main-ui", { visibility: "visible" })
                     .to("#main-ui", { opacity: 1, duration: 2 });
             }, 1800);
@@ -209,18 +193,34 @@ window.addEventListener('load', () => {
         setTimeout(step, s.dur);
     }
 
-    // Brief black pause
-gsap.to("#sound-btn", { opacity: 1, visibility: "visible", duration: 0.8, delay: 0.2 });
-
-if (sessionStorage.getItem('introSeen')) {
-    // Skip intro, go straight to main UI
-    document.getElementById('intro-overlay').style.display = 'none';
-    document.getElementById('main-ui').style.visibility = 'visible';
-    document.getElementById('main-ui').style.opacity = '1';
-} else {
-    sessionStorage.setItem('introSeen', 'true');
+    // Small pause before starting so the sound fires first
     setTimeout(step, 100);
 }
+
+window.addEventListener('load', () => {
+    // Clear flag on refresh so intro plays again
+    const navEntry = performance.getEntriesByType('navigation')[0];
+    if (navEntry && navEntry.type === 'reload') {
+        sessionStorage.removeItem('visited');
+    }
+
+    gsap.to("#sound-btn", { opacity: 1, visibility: "visible", duration: 0.8, delay: 0.2 });
+
+    if (sessionStorage.getItem('visited')) {
+        document.getElementById('intro-overlay').style.display = 'none';
+        document.getElementById('main-ui').style.visibility = 'visible';
+        document.getElementById('main-ui').style.opacity = '1';
+
+        const wasPlaying = sessionStorage.getItem('musicPlaying') === 'true';
+        const savedTime  = parseFloat(sessionStorage.getItem('musicTime')) || 0;
+        if (wasPlaying) {
+            bgAudio.currentTime = savedTime;
+            bgAudio.play();
+            soundOn = true;
+            document.getElementById('wave1').style.display = 'block';
+            document.getElementById('wave2').style.display = 'block';
+        }
+    }
 });
 
 window.addEventListener('resize', () => {
