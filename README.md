@@ -158,7 +158,7 @@ code .
 
 **3. Launch with Live Server**
 
-Right-click `Start-Page/index.html` in the Explorer panel, then select **Open with Live Server**.
+Right-click `Main\ Start\ Page/index.html` in the Explorer panel, then select **Open with Live Server**.
 
 > **Important:** Do not open HTML files directly in a browser. Local asset loading restrictions will prevent audio narration and certain media resources from functioning correctly. Always use Live Server or an equivalent local development server.
 
