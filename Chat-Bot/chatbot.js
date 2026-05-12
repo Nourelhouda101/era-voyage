@@ -1,6 +1,5 @@
 // API key initialization
-const API_KEY = "AIzaSyCGyPQZWD0rVz0E3Bl5LluqDKWgKAl9PQw";
-
+// remove the API key temporarily for privcy
 
 // Get elements from HTML page using their IDs
 const chatBotInput = document.getElementById("chatbot-input");
