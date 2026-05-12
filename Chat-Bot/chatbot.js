@@ -1,5 +1,5 @@
 // API key initialization
-// remove the API key temporarily for privcy
+// remove the API key temporarily for privcay
 
 // Get elements from HTML page using their IDs
 const chatBotInput = document.getElementById("chatbot-input");
