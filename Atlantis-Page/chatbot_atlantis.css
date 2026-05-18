@@ -46,6 +46,7 @@ body {
   border-radius: 18px;
   box-shadow: 0 10px 40px rgba(0,0,0,0.6);
   background: url("../Chat-Bot/media/atlantis_back.png") center/cover no-repeat;
+  background-size: cover;
   display: flex;
   flex-direction: column;
   overflow: hidden;
