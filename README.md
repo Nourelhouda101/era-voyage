@@ -1,5 +1,7 @@
-# ERA VOYAGE
+# 🧭 ERA VOYAGE
 ### *An Interactive Historical Exploration Platform*
+
+*Every civilization leaves behind a story carved in time. [Era Voyage](https://nourelhouda101.github.io/era-voyage/) invites you to explore the wonders, cultures, and innovations that shaped human history through the ages.*
 
 ---
 
@@ -27,28 +29,28 @@ Each civilization module is crafted with its own atmosphere, color palette, medi
 
 ## Features
 
-### Cinematic Scroll Experience
+### 1. Cinematic Scroll Experience
 Smooth scrolling effects and layered parallax backgrounds generate an atmospheric, cinematic depth that draws users into each historical period.
 
-### Glass Morphism UI
+### 2. Glass Morphism UI
 Modern frosted-glass card components with ambient glow effects and elegant state transitions provide a cohesive and refined visual identity.
 
-### Interactive Modal System
+### 3. Interactive Modal System
 Historical artifact and event cards expand into richly detailed modal popups containing extended information, supporting imagery, and contextual data.
 
-### AI Audio Narration
+### 4. AI Audio Narration
 An integrated text-to-speech narration system allows users to listen to historical content, enhancing accessibility and engagement.
 
-### Intelligent Chatbot Assistant
+### 5. Intelligent Chatbot Assistant
 A built-in conversational assistant offers guided exploration, answers historical questions, and provides supplementary information throughout the experience.
 
-### Scroll-Reveal Animations
+### 6. Scroll-Reveal Animations
 Page sections and UI components animate progressively as users scroll, maintaining visual interest and guiding attention naturally through content.
 
-### Civilization Portal Navigation
+### 7. Civilization Portal Navigation
 Interconnected portal cards link civilizations together, enabling seamless transitions and encouraging holistic exploration of the ancient world.
 
-### Contextual Navigation Controls
+### 8. Contextual Navigation Controls
 Built-in directional navigation elements improve flow and orientation across pages, reducing friction in the multi-page journey.
 
 ---
@@ -100,8 +102,8 @@ ERA-VOYAGE/
 | Civilization | Theme | Description |
 |---|---|---|
 | 🌊 Atlantis | Mythological / Oceanic | Exploration of the legendary sunken civilization, its lore, and philosophical legacy |
-| 𓂀 Ancient Egypt | Archaeological / Mystical | Pharaohs, pyramid architecture, sacred temples, and the depth of Egyptian mythology |
-| 🪶 Native Americans | Cultural / Spiritual | Tribal heritage, spiritual traditions, oral histories, and sacred connections to the land |
+| 🏺 Ancient Egypt | Archaeological / Mystical | Pharaohs, pyramid architecture, sacred temples, and the depth of Egyptian mythology |
+| 🦅 Native Americans | Cultural / Spiritual | Tribal heritage, spiritual traditions, oral histories, and sacred connections to the land |
 
 ---
 
@@ -188,6 +190,7 @@ ERA VOYAGE was developed to demonstrate the intersection of:
 | Noura Reda | Atlantis Page Development & Design | [GitHub](https://github.com/Nouraa0) |
 | Hana Abo Eissa | Atlantis Page Development & Content Integration | [GitHub](https://github.com/hana-abo-eissa) |
 | Ziad Amin | Native Americans Page Development & Design | [GitHub](https://github.com/ziadamin06) |
+
 
 ---
 ## License
