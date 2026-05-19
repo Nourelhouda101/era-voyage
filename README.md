@@ -83,7 +83,6 @@ ERA-VOYAGE/
 │
 ├── Main-Start-Page/
 │   ├── media/
-│   ├── index.html
 │   ├── StartPage.css
 │   └── StartPage.js
 │
@@ -92,7 +91,9 @@ ERA-VOYAGE/
 │   └── chatbot.js
 │
 ├── .gitignore
-└── README.md
+├── LICENSE
+├── README.md
+└── index.html
 ```
 
 ---
